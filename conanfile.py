@@ -43,9 +43,10 @@ class PcreConan(ConanFile):
             cmake.definitions["CMAKE_POSITION_INDEPENDENT_CODE:BOOL"] = "ON"
         cmake.definitions["BUILD_SHARED_LIBS:BOOL"] = "OFF"
         #
-        cmake.definitions["PCRE2_BUILD_PCRE8:BOOL"] = "ON"
-        cmake.definitions["PCRE2_BUILD_PCRE16:BOOL"] = "OFF"
-        cmake.definitions["PCRE2_BUILD_PCRE32:BOOL"] = "OFF"
+        cmake.definitions["PCRE2_BUILD_PCRE2_8:BOOL"] = "ON"
+        cmake.definitions["PCRE2_BUILD_PCRE2_16:BOOL"] = "OFF"
+        cmake.definitions["PCRE2_BUILD_PCRE2_32:BOOL"] = "OFF"
+        
         cmake.definitions["PCRE2_EBCDIC:BOOL"] = "OFF"
         cmake.definitions["PCRE2_EBCDIC_NL25:BOOL"] = "OFF"
         
@@ -56,9 +57,12 @@ class PcreConan(ConanFile):
         cmake.definitions["PCRE2_SUPPORT_LIBBZ2:BOOL"] = "OFF"
         cmake.definitions["PCRE2_SUPPORT_LIBEDIT:BOOL"] = "OFF"
         cmake.definitions["PCRE2_SUPPORT_LIBREADLINE:BOOL"] = "OFF"
+        
+        cmake.definitions["PCRE2_SUPPORT_JIT:BOOL"] = "ON"
 
         if self.settings.os == "Windows" and self.settings.compiler == "Visual Studio":
             cmake.definitions["PCRE2_STATIC_RUNTIME:BOOL"] = "OFF"
+            cmake.definitions["INSTALL_MSVC_PDB:BOOL"] = "ON"
         #
         cmake.configure()
         cmake.build()
