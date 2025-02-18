@@ -13,7 +13,7 @@ def get_safe(options, name):
 
 class PcreConan(ConanFile):
     name = "pcre2"
-    version = "10.44+0"
+    version = "10.45+0"
     license = "PCRE2 License https://www.pcre.org/licence.txt"
     description = "PCRE2 is a library of functions to support regular expressions whose syntax and semantics are as close as possible to those of the Perl 5 language."
     url = "https://github.com/odant/conan-pcre"
