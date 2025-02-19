@@ -5,13 +5,13 @@ find_path(PCRE2_INCLUDE_DIR
 )
 
 find_library(PCRE2_LIBRARY
-    NAMES pcre2-8 pcre2-8-static pcre2-8-staticd
+    NAMES pcre2-8 pcre2-8d pcre2-8-static pcre2-8-staticd pcre2-16 pcre2-16d pcre2-16-static pcre2-16-staticd pcre2-32 pcre2-32d pcre2-32-static pcre2-32-staticd
     PATHS ${CONAN_LIB_DIRS_PCRE2}
     NO_DEFAULT_PATH
 )
 
 find_library(PCRE2POSIX_LIBRARY
-    NAMES pcre2-posix pcre2-posix-static pcre2-posix-staticd
+    NAMES pcre2-posix pcre2-posixd pcre2-posix-static pcre2-posix-staticd
     PATHS ${CONAN_LIB_DIRS_PCRE2}
     NO_DEFAULT_PATH
 )
